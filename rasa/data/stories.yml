@@ -1,0 +1,219 @@
+version: "3.1"
+
+stories:
+
+  - story: User greets and confirms
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: action_greet_with_animation
+      - action: action_greet_speech
+      - intent: affirm
+      - action: utter_confirm_start
+      - action: action_confirm_start_speech
+      - action: action_idle_with_animation
+      - action: career_preferences_form
+      - active_loop: career_preferences_form
+
+  - story: User greets and denies
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: action_greet_with_animation
+      - action: action_greet_speech
+      - intent: deny
+      - action: utter_deny_start
+      - action: action_deny_start_speech
+      - action: utter_goodbye
+      - action: action_goodbye_speech
+      - action: action_restart
+
+
+  - story: interactive_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - action: action_greet_with_animation
+    - action: action_greet_speech
+    - intent: affirm
+    - action: utter_confirm_start
+    - action: action_confirm_start_speech
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - active_loop: career_preferences_form
+    - slot_was_set:
+      - requested_slot: tech_affinity
+    - intent: inform
+    - slot_was_set:
+      - tech_affinity: i love it
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: creativity
+    - intent: inform
+    - slot_was_set:
+      - creativity: very important
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: leadership
+    - intent: inform
+    - slot_was_set:
+      - leadership: part of the team
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: work_life_balance
+    - intent: inform
+    - slot_was_set:
+      - work_life_balance: very much
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_submit_form
+    - action: action_submit_form_speech
+    - action: action_recommend_career_speech
+    - action: action_thumbsup_with_animation
+    - action: action_recommend_careers
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_goodbye_with_animation
+    - action: action_goodbye_speech
+    - action: action_restart
+
+
+  - story: users doeasnt want to talk anymore
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: action_greet_with_animation
+      - action: action_greet_speech
+      - intent: affirm
+      - action: utter_confirm_start
+      - action: action_confirm_start_speech
+      - action: action_idle_with_animation
+      - action: career_preferences_form
+      - active_loop: career_preferences_form
+      - intent: out_of_scope
+      - action: utter_out_of_topic
+      - action: action_out_of_topic_speech
+      - intent: affirm
+      - action: utter_deny_start
+      - action: action_deny_start_speech
+      - action: utter_goodbye
+      - action: action_goodbye_speech
+      - action: action_restart
+
+
+  - story: interactive_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - action: action_greet_with_animation
+    - action: action_greet_speech
+    - intent: affirm
+    - action: utter_confirm_start
+    - action: action_confirm_start_speech
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - active_loop: career_preferences_form
+    - slot_was_set:
+      - requested_slot: tech_affinity
+    - intent: inform
+    - slot_was_set:
+      - tech_affinity: i love tech
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: creativity
+    - intent: out_of_scope
+    - action: utter_out_of_topic
+    - action: action_out_of_topic_speech
+    - intent: affirm
+    - action: utter_deny_start
+    - action: action_deny_start_speech
+    - action: utter_goodbye
+    - action: action_goodbye_speech
+    - action: action_restart
+
+  - story: interactive_story_2
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - action: action_greet_with_animation
+    - action: action_greet_speech
+    - intent: affirm
+    - action: utter_confirm_start
+    - action: action_confirm_start_speech
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - active_loop: career_preferences_form
+    - slot_was_set:
+      - requested_slot: tech_affinity
+    - intent: out_of_scope
+    - action: utter_out_of_topic
+    - action: action_out_of_topic_speech
+    - intent: deny
+    - action: utter_ask_tech_affinity
+    - action: action_ask_tech_affinity_speech
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: tech_affinity
+    - intent: inform
+    - slot_was_set:
+      - tech_affinity: i love them
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: creativity
+    - intent: inform
+    - slot_was_set:
+      - creativity: very
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: leadership
+    - intent: inform
+    - slot_was_set:
+      - leadership: i am a leader
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: work_life_balance
+    - intent: inform
+    - slot_was_set:
+      - work_life_balance: i work a lot
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_submit_form
+    - action: action_submit_form_speech
+    - action: action_recommend_career_speech
+    - action: action_thumbsup_with_animation
+    - action: action_recommend_careers
+    - intent: out_of_scope
+    - intent: goodbye
+    - action: utter_goodbye
+    - action: action_goodbye_with_animation
+    - action: action_goodbye_speech
+    - action: action_restart
+
+  - story: interactive_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - action: action_greet_with_animation
+    - action: action_greet_speech
+    - intent: out_of_scope
+    - action: utter_out_of_topic
+    - action: action_out_of_topic_speech
+    - intent: affirm
+    - action: utter_deny_start
+    - action: action_deny_start_speech
+    - action: utter_goodbye
+    - action: action_goodbye_speech
+    - action: action_restart

@@ -1,0 +1,100 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_goodbye_with_animation
+  - action: action_goodbye_speech
+  - action: action_restart
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_greet_with_animation
+  - action: action_greet_speech
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: action_iamabot_speech
+
+- rule: Handle abusive language
+  steps:
+  - intent: abusive_language
+  - action: utter_abusive_language
+  - action: action_abusive_language_speech
+
+- rule: Handle text out of topic
+  condition:
+      - active_loop: career_preferences_form
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_topic
+  - action: action_out_of_topic_speech
+
+- rule: Handle text out of topic 2 
+  steps:
+  - action: utter_out_of_topic
+  - action: action_out_of_topic_speech
+  - intent: affirm
+  - action: utter_deny_start
+  - action: action_deny_start_speech
+  - action: utter_goodbye
+  - action: action_goodbye_speech
+  - action: action_restart
+
+- rule: Greet and ask for confirmation
+  steps:
+    - action: utter_greet
+    - action: action_greet_speech
+    - action: action_greet_with_animation
+    - intent: affirm
+    - action: utter_confirm_start
+    - action: action_confirm_start_speech
+    - action: action_idle_with_animation
+    - action: career_preferences_form
+    - active_loop: career_preferences_form
+
+- rule: User denies starting the form
+  steps:
+    - action: utter_greet
+    - action: action_greet_speech
+    - action: action_greet_with_animation
+    - intent: deny
+    - action: utter_deny_start
+    - action: action_deny_start_speech
+    - action: utter_goodbye
+    - action: action_goodbye_speech
+    - action: action_restart
+
+- rule: Submit career preferences form
+  condition:
+    - active_loop: career_preferences_form
+  steps:
+    - action: career_preferences_form
+    - active_loop: null
+    - action: utter_submit_form
+    - action: action_submit_form_speech
+    - action: action_recommend_career_speech
+    - action: action_thumbsup_with_animation
+    - action: action_recommend_careers
+    
+  
+
+- rule: Reset conversation when needed
+  steps:
+    - action: action_reset_conversation
+
+- rule: Reset conversation when user asks
+  steps:
+    - intent: reset_conversation
+    - action: action_reset_conversation
+
+
+
+

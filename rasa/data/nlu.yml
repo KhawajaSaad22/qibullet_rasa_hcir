@@ -1,0 +1,212 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - happy Monday!
+    - how you doin
+    - yo!
+    - sup
+    - heyo!
+    - Greetings
+    - Salam
+    - Bonjour
+    - Hola
+    - Namaste
+    - Ahoy there!
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - see you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thank you, bye
+    - Bye for now
+    - Farewell
+    - Until next time
+    - Sayonara
+    - Ciao
+    - Peace out
+    - Until we meet again
+    - Toodles
+- intent: affirm
+  examples: |
+    - yes
+    - Absolutely! Let's get started
+    - Yes, I'd love to
+    - Sure thing! Let's dive in
+    - of course
+    - that sounds good
+    - let's go
+    - yes please
+    - I'm ready—let's do this
+    - I'd be happy to! Sounds fun
+    - Sure! I'm eager to explore some career options.
+    - Sounds intriguing—I'm in!
+    - I'd love to learn more about what you recommend
+    - why not
+    - sure
+    - Bring it on!
+    - I'm all ears
+    - Definitely
+    - Go ahead
+    - Of course
+    - Let's start
+- intent: deny
+  examples: |
+    - no
+    - n
+    - No, sorry
+    - I don't think so
+    - no way
+    - not now
+    - Not right now, thank you.
+    - I'll pass, but I appreciate it.
+    - I'm good, thanks!
+    - Not today!
+    - Maybe another time.
+    - I'll skip for now.
+    - Maybe later.
+    - No, sorry.
+    - Not for me.
+    - I'm going to decline, but thanks anyway.
+    - I'm not looking for career advice right now.
+    - Thanks, but I've got it covered for now.
+    - I'm gonna have to pass.
+    - Not at the moment, but thanks for asking
+    - I'm not interested, but thanks anyway
+- intent: inform
+  examples: |
+    - I enjoy working with technology
+    - I'm very familiar with modern technologies
+    - I'm highly comfortable with modern technologies and enjoy learning more about them.
+    - I absolutely love tech
+    - working with modern technologies is one of my favorite things
+    - i love it
+    - I really do
+    - I'm okay with tech, but not obsessed.
+    - I know enough to get by.
+    - I'm not too familiar with it.
+    - not very much
+    - not really
+    - I don't have much experience
+    - Not my area of expertise.
+
+    - very important
+    - Creativity is key to everything I do!
+    - It's crucial for innovation and problem-solving.
+    - i must do something creative
+    - Absolutely vital—creativity fuels my passion.
+    - It's a big part, but I also rely on other skills.
+    - I value creativity
+    - It's useful, but not the core of my work.
+    - I use creativity occasionally, but structure is more important.
+    - My work is more about consistency than creativity.
+    - Creativity plays a small role in my day-to-day work.
+    - I rely more on logic and efficiency than creativity.
+    - I'm not very creative
+    - not at all
+
+    - I like leadership roles
+    - I prefer taking charge and guiding others
+    - Leadership suits me
+    - I thrive in leadership roles, where I can make decisions.
+    - I like leading and setting direction for the team.
+    - I prefer taking the lead and motivating others.
+    - i am a leader
+    - I'm comfortable in both roles, depending on the situation
+    - I like the flexibility of switching between leadership and team roles
+    - Both have their appeal
+    - I prefer being part of a team
+    - I enjoy collaborating and supporting others in a team
+    - i am a team player
+    - i don't like leading
+    - I'm happiest when working as part of a team
+    - I like contributing as part of a team rather than leading.
+    - "I prefer working within a team and contributing to group goals.
+
+    - Work-life balance is crucial
+    - It's essential for my well-being and productivity.
+    - Work-life balance is a top priority for me.
+    - Crucial—both work and personal life matter equally to me.
+    - It's important, but I can be flexible when needed.
+    - It's important, but I'm okay with occasional busy periods.
+    - I aim for balance, but I can adapt if needed.
+    - flexible
+    - I focus on work, but make time for personal life when possible
+    - i work a lot
+    - I'm okay with long hours and occasional imbalance
+    - Work is my main focus
+    - I don't mind working late hours
+    - I'm fine with work demanding more of my time when needed.
+    - I'm more focused on my career
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: out_of_scope
+  examples: |
+    - that's not what I want to do
+    - wait stop
+    - you're no help
+    - this is no help at all
+    - how old are you
+    - I want to order a pizza
+    - tell me the weather
+    - this isn't working
+    - I enjoy traveling around the world.
+    - I don't want to tell you that
+    - none of your business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I want to do something else
+    - I changed my mind
+    - My favorite color is blue.
+    - how ist the weather today?
+    - how are you
+    - I'm not sure about my career path right now.
+    - I prefer coffee over tea.
+
+- intent: abusive_language
+  examples: |
+    - This is stupid
+    - You're useless
+    - This is the dumbest thing I've ever seen.
+    - Shut up
+    - Idiot
+    - What a waste of time you are.
+    - You don't know anything, do you?
+    - You're so stupid
+    - Get lost, idiot
+    - What a piece of crap
+    - You suck
+    - You're just a worthless machine
+    - Shut down already
+    - You better work or I'll get you fired
+    - Stop wasting my time
+
+- intent: reset_conversation
+  examples: |
+    - restart
+    - reset the conversation
+    - start over
+    - clear everything

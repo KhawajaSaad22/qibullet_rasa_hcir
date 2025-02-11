@@ -1,0 +1,104 @@
+version: '3.1'
+intents:
+- abusive_language
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- inform
+- out_of_scope
+- reset_conversation
+responses:
+  utter_greet:
+  - text: Hi! I'm MentorPep, your career recommendation assistant. Would you like to answear me a few questions to estimate the best career path for you?
+  utter_goodbye:
+  - text: Goodbye! Take care.
+  utter_confirm_start:
+  - text: Great! Let's begin. I'll ask you a few questions about your preferences.
+  utter_deny_start:
+  - text: No problem! You can try later if you change your mind.
+  utter_ask_tech_affinity:
+  - text: How familiar are you with modern technologies and do you like to work with them?
+  utter_ask_creativity:
+  - text: How important is creativity in your work?
+  utter_ask_leadership:
+  - text: Do you prefer leadership roles or being part of a team?
+  utter_ask_work_life_balance:
+  - text: How crucial is work-life balance for you?
+  utter_submit_form:
+  - text: Thanks for sharing your preferences!
+  utter_abusive_language:
+  - text: Please keep the conversation respectful and appropriate.
+  utter_out_of_topic:
+  - text: It seems like we're getting off topic. Do you want to stop?
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+slots:
+  tech_affinity:
+    type: text
+    mappings:
+    - type: from_text
+      intent: inform
+      conditions:
+      - active_loop: career_preferences_form
+        requested_slot: tech_affinity
+    influence_conversation: false
+  creativity:
+    type: text
+    mappings:
+    - type: from_text
+      intent: inform
+      conditions:
+      - active_loop: career_preferences_form
+        requested_slot: creativity
+    influence_conversation: false
+  leadership:
+    type: text
+    mappings:
+    - type: from_text
+      intent: inform
+      conditions:
+      - active_loop: career_preferences_form
+        requested_slot: leadership
+    influence_conversation: false
+  work_life_balance:
+    type: text
+    mappings:
+    - type: from_text
+      intent: inform
+      conditions:
+      - active_loop: career_preferences_form
+        requested_slot: work_life_balance
+    influence_conversation: false
+forms:
+  career_preferences_form:
+    required_slots:
+    - tech_affinity
+    - creativity
+    - leadership
+    - work_life_balance
+actions:
+- action_stop
+- action_recommend_careers
+- action_greet_with_animation
+- action_goodbye_with_animation
+- action_idle_with_animation
+- action_thumbsup_with_animation
+- action_greet_speech
+- action_goodbye_speech
+- action_reset_conversation
+- action_confirm_start_speech
+- action_deny_start_speech
+- action_ask_tech_affinity_speech
+- action_ask_creativity_speech
+- action_ask_leadership_speech
+- action_ask_work_life_balance_speech
+- action_submit_form_speech
+- action_abusive_language_speech
+- action_out_of_topic_speech
+- action_iamabot_speech
+- action_recommend_career_speech
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
